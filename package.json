@@ -25,6 +25,7 @@
     "express-ejs-layouts": "^2.3.0",
     "express-jwt": "^5.3.0",
     "jsonwebtoken": "^7.4.1",
+    "materialize-css": "^0.98.2",
     "mocha": "^3.4.1",
     "mongoose": "^4.9.9",
     "morgan": "^1.8.1",
