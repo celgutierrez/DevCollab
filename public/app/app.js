@@ -22,8 +22,14 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 })
                 .state('404', {
                     url: '/404',
-                    templateUrl: 'app/views/404.html'
+                    templateUrl: 'app/views/404.html',
+                })
+                .state('profile', {
+                    url: '/profile',
+                    templateUrl: 'app/views/profile.html',
+
                 });
+
 
             $locationProvider.html5Mode(true);
         }
