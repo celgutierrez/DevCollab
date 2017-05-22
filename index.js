@@ -11,6 +11,7 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
+var Matches = require('./models/matches')
 var mongoose = require('mongoose');
 var User = require('./models/user');
 var Matches = require('./models/matches');
