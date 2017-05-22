@@ -25,7 +25,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                     templateUrl: 'app/views/404.html',
                 })
                 .state('profile', {
-                    url: '/profile',
+                    url: '/profile/:id',
                     templateUrl: 'app/views/profile.html',
 
                 });
