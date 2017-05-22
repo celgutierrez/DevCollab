@@ -2,13 +2,14 @@ angular.module('MyCtrls', ['MyServices'])
     .controller('HomeCtrl', ['$scope', function($scope) {
 
     }])
-    .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+    .controller('NavCtrl', ['$scope', 'Auth', '$location', function($scope, Auth, $location) {
         $scope.isLoggedIn = function() {
             return Auth.isLoggedIn();
         }
 
         $scope.logout = function() {
             Auth.removeToken();
+            $location.path('/');
         };
     }])
     .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
@@ -19,7 +20,7 @@ angular.module('MyCtrls', ['MyServices'])
         $scope.userSignup = function() {
             $http.post('/api/users', $scope.user).then(function success(res) {
                 console.log('successfully created a new user', res);
-                $location.path('/'); //relocate to the home page
+                $location.path('/profile'); //relocate to the profile page
             }, function error(res) {
                 console.log('Error while signing up', res);
             });
@@ -40,7 +41,7 @@ angular.module('MyCtrls', ['MyServices'])
                 Auth.saveToken(res.data.token);
                 Alerts.add('success', 'You are now logged in, congrats.');
                 $timeout(clearAlerts, 1500);
-                $location.path('/'); //redirect to home
+                $location.path('/portfolio'); //redirect to home
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again!!');
