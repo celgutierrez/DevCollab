@@ -11,6 +11,7 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
+var Matches = require('./models/matches')
 var mongoose = require('mongoose');
 var User = require('./models/user');
 mongoose.connect('mongodb://localhost/authboilerplate'); //change authboilerplate to db name
