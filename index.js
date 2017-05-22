@@ -1,7 +1,7 @@
+require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-require('dotenv').config();
 
 // JSON web token dependencies, including a secret key to sign the token
 var expressJWT = require('express-jwt');
@@ -13,22 +13,18 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-mongoose.connect('mongodb://localhost/changethistodb');
-///IMPORTANT: 'changethistodb' definitely should be name of new db
+mongoose.connect('mongodb://localhost/authboilerplate'); //change authboilerplate to db name
+
 // decode POST data in JSON and URL encoded formats
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
-
 // Replace the above routes with the following
-app.use('/api/recipes', expressJWT({ secret: secret }), require('./controllers/nameofcontroller'));
-//other db js file replaces 'nameofcontroller'
 app.use('/api/users', expressJWT({ secret: secret }).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
-
 
 // this middleware will check if expressJWT did not authorize the user, and return a message
 app.use(function(err, req, res, next) {
