@@ -20,7 +20,7 @@ angular.module('MyCtrls', ['MyServices'])
         $scope.userSignup = function() {
             $http.post('/api/users', $scope.user).then(function success(res) {
                 console.log('successfully created a new user', res);
-                $location.path('/profile'); //relocate to the profile page
+                $location.path('/profile/:id'); //relocate to the profile page
             }, function error(res) {
                 console.log('Error while signing up', res);
             });
