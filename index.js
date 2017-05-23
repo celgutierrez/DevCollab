@@ -11,9 +11,17 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
+<<<<<<< HEAD
 
 var mongoose = require('mongoose');
 var User = require('./models/user');
+=======
+var mongoose = require('mongoose');
+var Matches = require('./models/match');
+
+var User = require('./models/user');
+
+>>>>>>> 3eb856de0f05cde3dcc608b05692dc18d0ac3c19
 mongoose.connect('mongodb://localhost/DevCollab'); //change authboilerplate to db name
 
 // decode POST data in JSON and URL encoded formats
