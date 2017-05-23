@@ -12,7 +12,6 @@ var app = express();
 
 // mongoose models and connection
 var mongoose = require('mongoose');
-var Matches = require('./models/match');
 
 var User = require('./models/user');
 
