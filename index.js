@@ -11,11 +11,9 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
-var Matches = require('./models/matches')
+
 var mongoose = require('mongoose');
-var Matches = require('./models/match');
 var User = require('./models/user');
-var Matches = require('./models/matches');
 mongoose.connect('mongodb://localhost/DevCollab'); //change authboilerplate to db name
 
 // decode POST data in JSON and URL encoded formats
@@ -25,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
 // Replace the above routes with the following
+
 app.use('/api/users', expressJWT({ secret: secret }).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));

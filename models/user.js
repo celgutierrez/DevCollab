@@ -16,7 +16,6 @@ var UserSchema = mongoose.Schema({
     },
     likes: ['User._id'],
     dislikes: ['User._id']
-
 });
 
 UserSchema.set('toJSON', {
