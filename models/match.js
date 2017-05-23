@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
-var MatchesSchema = mongoose.Schema({
+var MatchSchema = mongoose.Schema({
     selector: String,
     selectee: String
-})
+});
 
 
-module.exports = mongoose.model('Matches', MatchesSchema);
+module.exports = mongoose.model('Match', MatchSchema);
