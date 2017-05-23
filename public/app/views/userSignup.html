@@ -1,4 +1,5 @@
 <form ng-submit="userSignup()">
+<<<<<<< HEAD
     <div class="container">
         <div class="row">
             <div class="input-field col s6 offset-s5 offset-m3">
@@ -16,4 +17,33 @@
             </div>
         </div>
     </div>
+=======
+    <legend>Signup</legend>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="test@test.com" ng-model="user.email">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="********" ng-model="user.password">
+    </div>
+
+    <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" id="name" ng-model="user.name">
+     </div>
+
+     <div class="form-group">
+        <label for="portfolioUrl">Portfolio</label>
+        <input type="text" class="form-control" id="portfolio" ng-model="user.portfolioUrl">
+    </div>
+
+    <div class="form-group">
+        <label for="description">description</label>
+        <input type="textbox" class="form-control" id="description" ng-model="user.description">
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
+>>>>>>> 9ceb0ef03566273c80f92969275ca3c136428136
 </form>
