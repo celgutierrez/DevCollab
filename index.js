@@ -13,7 +13,9 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var Matches = require('./models/match');
+
 var User = require('./models/user');
+
 mongoose.connect('mongodb://localhost/DevCollab'); //change authboilerplate to db name
 
 // decode POST data in JSON and URL encoded formats
