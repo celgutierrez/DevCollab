@@ -4,24 +4,28 @@ var bcrypt = require('bcrypt');
 var UserSchema = mongoose.Schema({
     name: String,
     avatar: String,
-    portfolio_id: String,
-    contacts: {
-        email: {
+    portfolio: String,
+    email: {
             type: String,
             required: true,
             unique: true
         },
-        phone: Number,
-        gitHubLink: String,
-        linkedIn: String,
-    },
-
     password: {
         type: String,
-        required: true},
+        required: true
+},
+likes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
+dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
 
-    likes: ['User._id'],
-    dislikes: ['User._id']
+   contacts: {
+    email: String,
+    linkedIn: String,
+    github: String,
+    phone: Number
+   },
+
+    portfolioUrl: String,
+description: String
 
 });
 
