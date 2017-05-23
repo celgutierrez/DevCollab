@@ -17,7 +17,6 @@ var mongoose = require('mongoose');
 var User = require('./models/user');
 =======
 var mongoose = require('mongoose');
-var Matches = require('./models/match');
 
 var User = require('./models/user');
 
