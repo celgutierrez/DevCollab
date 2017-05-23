@@ -1,17 +1,7 @@
-<nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Web Dev Portfolio</a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-right">
+<nav ng-controller="NavCtrl">
+    <div class="navbar-wrapper" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <ul id="nav-mobile" class="left">
             <li><a href="/signup" ng-hide="isLoggedIn()">Signup</a></li>
             <li><a href="/login" ng-hide="isLoggedIn()">Login</a></li>
             <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
