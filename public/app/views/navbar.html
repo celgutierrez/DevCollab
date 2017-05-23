@@ -1,11 +1,8 @@
-<nav ng-controller="NavCtrl">
-    <div class="navbar-wrapper" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
+<nav ng-controller="NavCtrl" role="navigation" class="indigo darken-3">
+    <div class="navbar-wrapper">
+        <a href="/" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="left">
-            <li><a href="/signup" ng-hide="isLoggedIn()">Signup</a></li>
-            <li><a href="/login" ng-hide="isLoggedIn()">Login</a></li>
             <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
         </ul>
     </div>
-    <!-- /.navbar-collapse -->
 </nav>

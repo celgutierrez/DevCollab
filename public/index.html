@@ -9,9 +9,7 @@
     <title>DevCollab</title>
     <!-- Materialize -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css">
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script>
     <!-- Angular -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
@@ -29,25 +27,19 @@
 </head>
 
 <body>
-    <div class="container">
-        <div ng-include="'app/views/navbar.html'"></div>
-        <div ng-controller="AlertsController">
-            <div ng-repeat="a in alerts()">
-                <div class="alert alert-danger" ng-if="alert.type == 'error'">
-                    {{ a.msg }}
-                </div>
-                <div class="alert alert-success" ng-if="alert.type == 'success'">
-                    {{ a.msg }}
-                </div>
+    <div ng-show="isLoggedIn()" ng-include="'app/views/navbar.html'"></div>
+    <div ng-controller="AlertsController">
+        <div ng-repeat="a in alerts()">
+            <div class="alert alert-danger" ng-if="alert.type == 'error'">
+                {{ a.msg }}
+            </div>
+            <div class="alert alert-success" ng-if="alert.type == 'success'">
+                {{ a.msg }}
             </div>
         </div>
         <div ui-view></div>
-        <a href="/">Home</a>
-        <a href="/profile/:id">Profile</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
-    </div>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
 </body>
 
 </html>
