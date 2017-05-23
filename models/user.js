@@ -5,15 +5,21 @@ var UserSchema = mongoose.Schema({
     name: String,
     avatar: String,
     portfolio_id: String,
-    email: {
-        type: String,
-        required: true,
-        unique: true
+    contacts: {
+        email: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        phone: Number,
+        gitHubLink: String,
+        linkedIn: String,
     },
+
     password: {
         type: String,
-        required: true
-    },
+        required: true},
+
     likes: ['User._id'],
     dislikes: ['User._id']
 
