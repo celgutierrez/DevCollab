@@ -1,3 +1,7 @@
 .color {
     background-color: blue;
 }
+
+#file {
+    width: 480px;
+}

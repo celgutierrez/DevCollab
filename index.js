@@ -11,9 +11,10 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
-var mongoose = require('mongoose');
 
+var mongoose = require('mongoose');
 var User = require('./models/user');
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/DevCollab'); //change authboilerplate to db name
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
 // Replace the above routes with the following
+
 app.use('/api/users', expressJWT({ secret: secret }).unless({
     path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
@@ -52,6 +54,14 @@ app.post('/api/auth', function(req, res) {
         return res.send({ user: user, token: token });
     });
 });
+
+app.get('/users', function(req, res) {
+    db.user.authenticate(null, req.body.password, function(err, bool) {
+        console.log('1234 ', bool);
+        res.send(bool);
+    });
+});
+
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));

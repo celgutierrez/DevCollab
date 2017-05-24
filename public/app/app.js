@@ -27,12 +27,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                 .state('profile', {
                     url: '/profile/:id',
                     templateUrl: 'app/views/profile.html',
+                    controller: 'ProfileCtrl'
                 })
                 .state('portfolio', {
                     url: '/portfolio',
-                    templateUrl: 'app/views/portfolio.html'
+                    templateUrl: 'app/views/portfolio.html',
                 })
-
 
             $locationProvider.html5Mode(true);
         }

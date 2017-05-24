@@ -6,35 +6,35 @@ var UserSchema = mongoose.Schema({
     avatar: String,
     portfolio: String,
     email: {
-            type: String,
-            required: true,
-            unique: true
-        },
+        type: String,
+        required: true,
+        unique: true
+    },
     password: {
         type: String,
         required: true
-},
-likes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
-dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
+    },
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
+    dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
 
-   contacts: {
-    email: String,
-    linkedIn: String,
-    github: String,
-    phone: Number
-   },
+    contacts: {
+        email: String,
+        linkedIn: String,
+        github: String,
+        phone: Number
+    },
 
     portfolioUrl: String,
-description: String
-
+    description: String
 });
-
 UserSchema.set('toJSON', {
     transform: function(doc, ret, options) {
         var returnJson = {
             id: ret._id,
             email: ret.email,
-            name: ret.name
+            name: ret.name,
+            avatar: ret.avatar,
+            portfolio: ret.portfolio
         };
         return returnJson;
     }
