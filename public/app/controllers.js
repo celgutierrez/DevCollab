@@ -12,14 +12,18 @@ angular.module('MyCtrls', ['MyServices'])
             $location.path('/');
         };
     }])
-    .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+    .controller('SignupCtrl', ['$scope', '$http', '$location', '$stateParams', function($scope, $http, $location, $stateParams) {
         $scope.user = {
+            name: '',
             email: '',
-            password: ''
+            password: '',
+            portfolio: '',
+            avatar: '',
+            description: ''
         };
         $scope.userSignup = function() {
-            $http.post('/api/users', $scope.user).then(function success(res) {
-                console.log('successfully created a new user', res);
+            $http.post('/users/:id', $scope.user).then(function success(res) {
+                console.log('successfully created a new user', res.config.data);
                 $location.path('/profile/:id'); //relocate to the profile page
             }, function error(res) {
                 console.log('Error while signing up', res);
@@ -28,8 +32,12 @@ angular.module('MyCtrls', ['MyServices'])
     }])
     .controller('LoginCtrl', ['$scope', '$timeout', 'Auth', '$http', '$location', 'Alerts', function($scope, $timeout, Auth, $http, $location, Alerts) {
         $scope.user = {
+            name: '',
             email: '',
-            password: ''
+            password: '',
+            portfolio: '',
+            avatar: '',
+            description: ''
         };
         var clearAlerts = function() {
             Alerts.clear();
@@ -37,11 +45,11 @@ angular.module('MyCtrls', ['MyServices'])
 
         $scope.userLogin = function() {
             $http.post('/api/auth', $scope.user).then(function success(res) {
-                console.log('response from server when loggin in:', res);
+                console.log('response from server when loggin in:', res.config.data);
                 Auth.saveToken(res.data.token);
                 Alerts.add('success', 'You are now logged in, congrats.');
                 $timeout(clearAlerts, 1500);
-                $location.path('/portfolio'); //redirect to home
+                $location.path('/profile/:id'); //redirect to home
             }, function error(res) {
                 console.log('Something went wrong', res);
                 Alerts.add('error', 'Bad Login Info, Please Try Again!!');
@@ -49,6 +57,21 @@ angular.module('MyCtrls', ['MyServices'])
             });
         };
     }])
+
+
+
+    .controller('ProfileCtrl', ['$scope', '$http', function($scope, $http) {
+        console.log('in the users controller');
+        $http({
+          method: 'GET',
+          url: '/user'
+        }).then(function(res, data){
+          $scope.user = res.config.data;
+          console.log('boom, get her to sow that', res.config.data);
+        });
+    }])
+
+
     .controller('AlertsController', ['$scope', 'Alerts', function($scope, Alerts) {
         $scope.alerts = function() {
             return Alerts.get();

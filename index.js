@@ -11,16 +11,11 @@ var secret = process.env.JWT_SECRET;
 var app = express();
 
 // mongoose models and connection
-<<<<<<< HEAD
 
 var mongoose = require('mongoose');
 var User = require('./models/user');
-=======
 var mongoose = require('mongoose');
 
-var User = require('./models/user');
-
->>>>>>> 3eb856de0f05cde3dcc608b05692dc18d0ac3c19
 mongoose.connect('mongodb://localhost/DevCollab'); //change authboilerplate to db name
 
 // decode POST data in JSON and URL encoded formats
@@ -59,6 +54,14 @@ app.post('/api/auth', function(req, res) {
         return res.send({ user: user, token: token });
     });
 });
+
+app.get('/users', function(req, res) {
+    db.user.authenticate(null, req.body.password, function(err, bool) {
+        console.log('1234 ', bool);
+        res.send(bool);
+    });
+});
+
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));

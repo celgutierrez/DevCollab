@@ -4,32 +4,38 @@ var bcrypt = require('bcrypt');
 var UserSchema = mongoose.Schema({
     name: String,
     avatar: String,
-    portfolio_id: String,
-    contacts: {
-        email: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        phone: Number,
-        gitHubLink: String,
-        linkedIn: String,
+    portfolio: String,
+    description: String,
+
+    email: {
+        type: String,
+        required: true,
+        unique: true
     },
 
     password: {
         type: String,
-        required: true},
+        required: true
+    },
 
-    likes: ['User._id'],
-    dislikes: ['User._id']
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    
+    contacts: {
+        email: String,
+        linkedin: String,
+        github: String,
+        phone: Number
+    },
 });
-
 UserSchema.set('toJSON', {
     transform: function(doc, ret, options) {
         var returnJson = {
             id: ret._id,
             email: ret.email,
-            name: ret.name
+            name: ret.name,
+            avatar: ret.avatar,
+            portfolio: ret.portfolio
         };
         return returnJson;
     }
