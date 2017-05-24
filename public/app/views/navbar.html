@@ -1,7 +1,8 @@
-<nav ng-controller="NavCtrl" role="navigation" class="indigo darken-3">
+<nav ng-show="isLoggedIn()" ng-controller="NavCtrl" role="navigation" class="indigo darken-3">
     <div class="navbar-wrapper">
-        <a href="/" class="brand-logo">Home</a>
-        <ul id="nav-mobile" class="left">
+        <div class="brand-logo left">DevCollab</div>
+        <ul id="nav-mobile" class="right">
+            <li><a ng-click="/profile" ng-show="isLoggedIn()">Profile</a></li>
             <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
         </ul>
     </div>
