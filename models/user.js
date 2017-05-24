@@ -5,28 +5,27 @@ var UserSchema = mongoose.Schema({
     name: String,
     avatar: String,
     portfolio: String,
-    description: String,
-
     email: {
         type: String,
         required: true,
         unique: true
     },
-
     password: {
         type: String,
         required: true
     },
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
+    dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref:'User' }],
 
-    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    dislikes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-    
     contacts: {
         email: String,
-        linkedin: String,
+        linkedIn: String,
         github: String,
         phone: Number
     },
+
+    portfolioUrl: String,
+    description: String
 });
 UserSchema.set('toJSON', {
     transform: function(doc, ret, options) {
