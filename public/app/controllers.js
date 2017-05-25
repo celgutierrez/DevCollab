@@ -16,16 +16,20 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     });
   };
 }])
-.controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', function($scope, $stateParams, Stalker) {
+.controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', 'Auth', function($scope, $stateParams, Stalker, Auth) {
+  var user = Auth.currentUser()
+  console.log('from auth.current user', user);
   $scope.stalker = {};
+  // console.log('id is', $stateParams.id);
 
   Stalker.get({ id: $stateParams.id }, function success(data) {
+    console.log('data is', data);
     $scope.stalker = data;
   }, function error(data) {
     console.log(data);
   });
 }])
-.controller('NewCtrl', ['$scope', '$location', 'Stalker' ,function($scope, $location, Stalker) {
+.controller('EditCtrl', ['$scope', '$location', 'Stalker' ,function($scope, $location, Stalker) {
   $scope.stalker = {
     name: '',
     title: '',
@@ -35,7 +39,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     avatar: ''
   };
 
-  $scope.createStalker = function() {
+  $scope.editStalker = function() {
     Stalker.save($scope.stalker, function success(data) {
       $location.path('/portfolio');
     }, function error(data) {
@@ -43,7 +47,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     });
   };
 }])
-.controller('NavCtrl', ['$scope', 'Auth','$location' ,function($scope, Auth, $location) {
+.controller('NavCtrl', ['$scope', 'Auth','$location','$stateParams', 'Stalker', function($scope, Auth, $location, $stateParams, Stalker) {
   $scope.isLoggedIn  = function() {
     return Auth.isLoggedIn();
   }
@@ -56,7 +60,10 @@ angular.module('StalkerCtrls', ['StalkerServices'])
 .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.user = {
     email: '',
-    password: ''
+    password: '',
+    name: '',
+    avatar: '',
+    portfolioUrl: ''
   };
   $scope.userSignup = function() {
     $http.post('/api/users', $scope.user).then(function success(res){

@@ -1,6 +1,8 @@
 angular.module('StalkerServices', ['ngResource'])
 .factory('Stalker', ['$resource', function($resource) {
-  return $resource('/api/stalkers/:id');
+  return $resource('/api/users/:id', {}, {
+    get: { isArray: false }
+  });
 }])
 .factory('Auth', ['$window', function($window){
   return {

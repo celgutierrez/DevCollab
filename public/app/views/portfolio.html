@@ -10,8 +10,9 @@
   <input type="text" class="form-control" id="search" ng-model="search">
 </div>
 
-<div class="well" ng-repeat="stalker in stalkers | filter:{title:search} track by stalker._id">
+<div class="well" ng-repeat="stalker in stalkers | filter:{title:search} track by $index">
   <h1>{{stalker.title}}</h1>
-  <a ng-href="/stalkers/{{stalker._id}}">view profile</a>
-  <a ng-click="deleteStalker(stalker._id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
+  
+  <a ng-href="/stalkers/{{stalker.id}}">view profile</a>
+  <a ng-click="deleteStalker(stalker.id, $index)" class="btn btn-danger glyphicon glyphicon-trash pull-right"></a>
 </div>
