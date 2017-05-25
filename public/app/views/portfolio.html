@@ -37,9 +37,11 @@
   <input type="text" class="form-control" id="search" ng-model="search">
 </div>
 
+
 <div class="well" ng-repeat="stalker in stalkers | filter:{title:search} track by stalker._id">
   <h1>{{stalker.name}}<h1>
   <h3>{{stalker.title}}</h3>
   <a ng-href="/stalkers/{{stalker._id}}">view profile</a>
   <a ng-click="deleteStalker(stalker._id, $index)" class="white-text #ef5350 red lighten-1" glyphicon glyphicon-trash pull-right">Delete</a>
+
 </div>

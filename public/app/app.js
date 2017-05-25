@@ -15,9 +15,9 @@ app.config(['$stateProvider', '$urlRouterProvider','$locationProvider',
       controller: 'PortfolioCtrl'
     })
     .state('editProfile', {
-      url: '/portfolio/new',
+      url: '/portfolio/edit',
       templateUrl: 'app/views/editProfile.html',
-      controller: 'NewCtrl'
+      controller: 'EditCtrl'
     })
     .state('profile', {
       url: '/stalkers/:id',

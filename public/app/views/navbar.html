@@ -2,8 +2,7 @@
     <div class="navbar-wrapper">
         <div class="brand-logo left">DevCollab</div>
         <ul id="nav-mobile" class="right">
-       <div ng-repeat="stalker in stalkers"></div>
-            <li><a href="/" ng-show="isLoggedIn()">Profile</a></li>
+          <li><a href="/stalkers/{{stalker._id}}">profile</a></li>   
             <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
         </ul>
     </div>

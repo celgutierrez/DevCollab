@@ -4,6 +4,7 @@ var router = express.Router();
 
 router.route('/')
   .get(function(req, res) {
+    console.log('find every user');
     User.find(function(err, users) {
       if (err) return res.status(500).send(err);
 
@@ -24,6 +25,7 @@ router.route('/')
   });
 
 router.get('/:id', function(req, res) {
+  console.log('finding one user');
   User.findById(req.params.id, function(err, user) {
     if (err) return res.status(500).send(err);
 

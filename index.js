@@ -2,6 +2,9 @@ require('dotenv').config();
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
+var multer = require('multer');
+var upload = multer({ dest: './uploads/' });
+var cloudinary = require('cloudinary');
 
 
 // JSON web token dependencies, including a secret key to sign the token
@@ -14,8 +17,6 @@ var app = express();
 // mongoose models and connection
 var mongoose = require('mongoose');
 var User = require('./models/user');
-var Stalker = require('./models/stalker');
-var StalkersUsers = require('./models/stalkers_users');
 mongoose.connect('mongodb://localhost/devCollabTest');
 
 // decode POST data in JSON and URL encoded formats
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(require('morgan')('dev'));
 
 // Replace the above routes with the following
-app.use('/api/stalkers', expressJWT({secret: secret}), require('./controllers/stalkers'));
+//app.use('/api/stalkers', expressJWT({secret: secret}), require('./controllers/stalkers'));
 app.use('/api/users', expressJWT({secret: secret}).unless({
   path: [{ url: '/api/users', methods: ['POST'] }]
 }), require('./controllers/users'));
@@ -55,9 +56,23 @@ app.post('/api/auth', function(req, res) {
   });
 });
 
+app.post('/uploadprofile', upload.single('myFile'), function(req, res) {
+  // console.log('uploading image', req.body);
+  cloudinary.uploader.upload(req.file.path, function(result) {
+    // console.log('New url from cloudinary', result.url);
+    User.findByIdAndUpdate({_id: req.body.id }, {avatar: result.url}, function(user) {
+      res.redirect('/stalkers/' + req.body.id);
+    });
+  });
+});
+
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+
+
+
+
 
 var server = app.listen(process.env.PORT || 3000);
 

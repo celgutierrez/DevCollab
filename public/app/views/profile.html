@@ -15,9 +15,17 @@
                 </p>
               <p>
                     {{stalker.description}}
-                    {{stalker._id}}
+                   
                 </p>
               <a href="{{stalker.portfolioUrl}}">portfolio</a>
+              
+                <form action="/uploadprofile" method="POST" enctype="multipart/form-data">
+                    <label for="avatar" class="btn btn-default btn-file">
+                    choose a profile pic <input type="file" name="myFile" class="hidden">
+                    </label>
+                    <input type="hidden" name="id" value="{{stalker.id}}">
+                    <input type="submit" class="btn btn-primary">
+                </form>
             </div>
         <!--     <div class="card-action"> -->
           <div class="card-reveal">
@@ -31,15 +39,5 @@
 
 
 
-<div class="container">
-    <div class="row-fluid">
-        <div class="col-md-12">
-            <div class="well">
-
-
-
-            </div>
-        </div>
-    </div>
 </div>
 <a href="/portfolio" class="btn btn-primary">&larr; Back</a>
