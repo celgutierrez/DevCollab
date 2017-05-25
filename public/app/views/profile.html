@@ -1,2 +1,18 @@
-<h1>profile page</h1>
-<p>{{user.description}}</p>
+<h1 class='text-center'>{{stalker.name}}'s profile page</h1>
+<div class="container">
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <div class="well">
+                <p>
+                    {{stalker.description}}
+                </p>
+                <p>
+                    {{stalker.name}}
+                </p>
+                <a href="{{stalker.portfolioUrl}}">portfolio</a>
+                <img class="img-responsive" ng-src="{{stalker.avatar}}">
+            </div>
+        </div>
+    </div>
+</div>
+<a href="/" class="btn btn-primary">&larr; Back</a>

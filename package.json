@@ -1,37 +1,37 @@
 {
-  "name": "DevCollab",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/celgutierrez/DevCollab.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/celgutierrez/DevCollab/issues"
-  },
-  "homepage": "https://github.com/celgutierrez/DevCollab#readme",
-  "dependencies": {
-    "animate.css": "^3.5.2",
-    "bcrypt": "^1.0.2",
-    "body-parser": "^1.17.1",
-    "chai": "^3.5.0",
-    "dotenv": "^4.0.0",
-    "express": "^4.15.3",
-    "express-ejs-layouts": "^2.3.0",
-    "express-jwt": "^5.3.0",
-    "jsonwebtoken": "^7.4.1",
-    "materialize-css": "^0.98.2",
-    "mocha": "^3.4.1",
-    "mongoose": "^4.9.9",
-    "morgan": "^1.8.1",
-    "path": "^0.12.7",
-    "socket.io": "^2.0.1",
-    "supertest": "^3.0.0"
-  }
+    "name": "angular-recipes",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "lint:js": "node_modules/eslint/bin/eslint.js ./ ./**/*.js --fix; exit 0",
+        "lint:css": "node_modules/csslint/cli.js public/css/; exit 0",
+        "test": "NODE_ENV=test node_modules/mocha/bin/mocha"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "babel-eslint": "^6.0.4",
+        "chai": "^3.5.0",
+        "csslint": "^0.10.0",
+        "eslint": "^2.11.1",
+        "eslint-config-airbnb": "^9.0.1",
+        "eslint-plugin-import": "^1.8.1",
+        "eslint-plugin-jsx-a11y": "^1.3.0",
+        "eslint-plugin-react": "^5.1.1",
+        "mocha": "^2.5.3",
+        "supertest": "^1.2.0"
+    },
+    "dependencies": {
+        "animate.css": "^3.5.2",
+        "chai": "^3.5.0",
+        "bcrypt": "^0.8.7",
+        "body-parser": "^1.15.2",
+        "cloudinary-angular": "^1.0.1",
+        "dotenv": "^4.0.0",
+        "express": "^4.14.0",
+        "express-jwt": "^3.4.0",
+        "jsonwebtoken": "^7.1.6",
+        "mongoose": "^4.5.7",
+        "morgan": "^1.7.0"
+    }
 }
