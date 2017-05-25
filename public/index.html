@@ -1,53 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="App">
-
-<head>
+<html lang="en" ng-app="MyApp">
+  <head>
     <base href="/">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DevCollab</title>
-    <!-- Materialize -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>devcollab test</title>
 
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.js"></script>
-    <!-- Angular -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+
     <script src="app/app.js"></script>
     <script src="app/controllers.js"></script>
     <script src="app/services.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
-
-<body>
-     <div class="container">
-        <div ng-include="'app/views/navbar.html'"></div>
-        <div ng-controller="AlertsController">
-            <div ng-repeat="a in alerts()">
-                <div class="alert alert-danger" ng-if="alert.type == 'error'">
-                    {{ a.msg }}
-                </div>
-                <div class="alert alert-success" ng-if="alert.type == 'success'">
-                    {{ a.msg }}
-                </div>
-            </div>
+  </head>
+  <body>
+    <div class="container">
+      <div ng-include="'app/views/navbar.html'"></div>
+      <div ng-controller="AlertsController">
+        <div ng-repeat="a in alerts()">
+          <div class="alert alert-danger" ng-if="a.type == 'error'">
+            {{ a.msg }}
+          </div>
+          <div class="alert alert-success" ng-if="a.type == 'success'">
+            {{ a.msg }}
+          </div>
         </div>
-        <div ui-view></div>
-        <a href="/">Home</a>
-        <a href="/profile/:id">Profile</a>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
-        <a href="/portfolio">portfolio</a>
+      </div>
+      <div ui-view></div>
     </div>
-</body>
-
+  </body>
 </html>

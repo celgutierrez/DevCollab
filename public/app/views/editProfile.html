@@ -1,0 +1,31 @@
+<h1 class='text-center'>Hey new user!</h1>
+<h2 class='text-center'>We want to get to know you a bit</h2>
+<p class='text-center'>fill out the information below..</p>
+
+<form ng-submit="createStalker()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" ng-model="stalker.name">
+  </div>
+    <div class="form-group">
+    <label for="title">What is your title??</label>
+    <input type="text" class="form-control" id="title" ng-model="stalker.title">
+  </div>
+  <div class="form-group">
+    <label for="description">Tell us about yourself</label>
+    <textarea class="form-control" id="description" ng-model="stalker.description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="image">Upload an image of your portfolio!</label>
+    <input type="file" class="form-control" id="image" placeholder="" ng-model="stalker.image">
+  </div>
+    <div class="form-group">
+    <label for="portfolioUrl">upload a link to your portfolio</label>
+    <input type="url" class="form-control" id="portfolioUrl" placeholder="" ng-model="stalker.portfolioUrl">
+  </div>
+  <div class="form-group">
+    <label for="avatar">upload a profile picture</label>
+    <input type="file" class='form-control' id="avatar" ng-model='stalker.avatar'>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
