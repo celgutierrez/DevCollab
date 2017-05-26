@@ -28,7 +28,8 @@ UserSchema.set('toJSON', {
       name: ret.name,
       url: ret.url,
       avatar: ret.avatar,
-      portfolioUrl: ret.portfolioUrl
+      portfolioUrl: ret.portfolioUrl,
+      description: ret.description
     };
     return returnJson;
   }
