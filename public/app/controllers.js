@@ -21,7 +21,6 @@ angular.module('StalkerCtrls', ['StalkerServices'])
 }])
 
 
-
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', 'Auth', function($scope, $stateParams, Stalker, Auth) {
   $scope.stalker = {};
   // console.log('id is', $stateParams.id);
@@ -79,7 +78,8 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     name: '',
     avatar: '',
     portfolioUrl: '',
-    description: ''
+    description: '',
+    title: ''
   };
   $scope.userSignup = function() {
     $http.post('/api/users', $scope.user).then(function success(res){
