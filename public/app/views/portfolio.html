@@ -4,14 +4,24 @@
     <h1>Portfolios</h1>
 
 
-    <div class="col s12 m4 offset-m4">
-      <div carousel ng-repeat="stalker in stalkers" class="card card-image">
-      
-          <a class="carousel-item" href="{{stalker.portfolioUrl}}"><img class="img-responsive" src="/img/itsme.JPG"><span>{{stalker.name}}</span><p>{{stalker.title}}</p>
-          </a>
-      </div>
-    </div>    
+<div ng-if="!stalkers">
+  Loading...
+</div>
+<div ng-if="stalkers">
+  <div carousel>
+  <ul ng-repeat="stalker in stalkers">
+      <li>
+      <a class="carousel-item card" href="#"><img src="/img/sample.png">{{stalker.name}}</a>
+      </li>
+  </ul>
   </div>
 </div>
 
 
+
+
+
+</div>
+
+
+</div>
