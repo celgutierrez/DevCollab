@@ -1,47 +1,28 @@
-<h1>portfolio</h1>
+<div class="container center">
+  <div class="row">
+<a href="/portfolio/edit" class="btn btn-success">edit your profile</a>
+<h1>portfolios</h1>
 
-<a href="/portfolio/new" class="btn btn-success">create your profile</a>
 
- <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="/img/itsme.JPG">
-                <img class="img-responsive" ng-src="{{stalker.avatar}}">
-              <span class="card-title">Card Title</span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-            <div class="card-content">
-              <p>
-                    {{stalker.name}}
-                </p>
-              <p>
-                    {{stalker.description}}
-                    {{stalker._id}}
-                </p>
-              <a href="{{stalker.portfolioUrl}}">portfolio</a>
-            </div>
-        <!--     <div class="card-action"> -->
-          <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-    </div>
-          </div>
+
+    <div class="col s12 m4 offset-m4">
+      <div class="card" ng-repeat="stalker in stalkers">
+        <div class="card-image">
+          <img class="img-responsive" src="/img/itsme.JPG" ngSw>
+          
+          <span class="card-title blue-text">{{stalker.name}}</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red left"><i class="material-icons">thumb_down</i></a>
+          <a class="btn-floating halfway-fab waves-effect waves-light green right"><i class="material-icons">thumb_up</i></a>
         </div>
+
+        <div class="card-content">
+          <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        </div>
+
       </div>
-
-
-<div class="form-group">
-  <label for="search">Search</label>
-  <input type="text" class="form-control" id="search" ng-model="search">
+    </div>
+  </div>
+  </div>`
 </div>
 
 
-<div class="well" ng-repeat="stalker in stalkers | filter:{title:search} track by stalker._id">
-  <h1>{{stalker.name}}<h1>
-  <h3>{{stalker.title}}</h3>
-  <a ng-href="/stalkers/{{stalker._id}}">view profile</a>
-  <a ng-click="deleteStalker(stalker._id, $index)" class="white-text #ef5350 red lighten-1" glyphicon glyphicon-trash pull-right">Delete</a>
-
-</div>

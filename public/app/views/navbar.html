@@ -2,7 +2,11 @@
     <div class="navbar-wrapper">
         <div class="brand-logo left">DevCollab</div>
         <ul id="nav-mobile" class="right">
-          <li><a href="/stalkers/{{stalker._id}}">profile</a></li>   
+          	<li><a href="/portfolio">Portfolios</a></li>  
+          	
+          	<li><a href="/stalkers/{{profile()}}">Profile</a></li> 
+
+          	<li><a href="/portfolio/edit">Settings</a></li>
             <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
         </ul>
     </div>

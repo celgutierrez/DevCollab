@@ -1,12 +1,15 @@
 angular.module('StalkerCtrls', ['StalkerServices'])
 .controller('PortfolioCtrl', ['$scope', 'Stalker', function($scope, Stalker) {
-  $scope.stalkers = [];
 
+
+
+  $scope.stalkers = [];
   Stalker.query(function success(data) {
     $scope.stalkers = data;
   }, function error(data) {
     console.log(data);
   });
+
 
   $scope.deleteStalker = function(id, stalkersIdx) {
     Stalker.delete({ id: id }, function success(data) {
@@ -16,9 +19,10 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     });
   };
 }])
+
+
+
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', 'Auth', function($scope, $stateParams, Stalker, Auth) {
-  var user = Auth.currentUser()
-  console.log('from auth.current user', user);
   $scope.stalker = {};
   // console.log('id is', $stateParams.id);
 
@@ -29,6 +33,11 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     console.log(data);
   });
 }])
+
+
+
+
+
 .controller('EditCtrl', ['$scope', '$location', 'Stalker' ,function($scope, $location, Stalker) {
   $scope.stalker = {
     name: '',
@@ -47,7 +56,12 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     });
   };
 }])
-.controller('NavCtrl', ['$scope', 'Auth','$location','$stateParams', 'Stalker', function($scope, Auth, $location, $stateParams, Stalker) {
+.controller('NavCtrl', ['$scope', 'Auth','$location', 'Stalker', function($scope, Auth, $location, Stalker) {
+  $scope.profile = function() {
+    return Auth.currentUser().id;
+    console.log('this is what you need' ,Auth.currentUser())
+}
+
   $scope.isLoggedIn  = function() {
     return Auth.isLoggedIn();
   }
@@ -56,6 +70,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     Auth.removeToken();
     $location.path('/')
   };
+
 }])
 .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
   $scope.user = {
@@ -63,7 +78,8 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     password: '',
     name: '',
     avatar: '',
-    portfolioUrl: ''
+    portfolioUrl: '',
+    description: ''
   };
   $scope.userSignup = function() {
     $http.post('/api/users', $scope.user).then(function success(res){
