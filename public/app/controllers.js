@@ -1,8 +1,6 @@
 angular.module('StalkerCtrls', ['StalkerServices'])
 .controller('PortfolioCtrl', ['$scope', 'Stalker', function($scope, Stalker) {
 
-
-
   $scope.stalkers = [];
   Stalker.query(function success(data) {
     $scope.stalkers = data;
