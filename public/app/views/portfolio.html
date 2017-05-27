@@ -1,27 +1,25 @@
 <div class="container center">
-  <div class="row">
-    <a href="/portfolio/edit" class="btn btn-success">edit your profile</a>
-    <h1>Portfolios</h1>
+    <div class="row">
+        <a href="/portfolio/edit" class="btn btn-success">edit your profile</a>
+        <h1>Portfolios</h1>
 
+        <div ng-if="!stalkers">
+            Loading...
+        </div>
 
-<div ng-if="!stalkers">
-  Loading...
-</div>
-<div ng-if="stalkers">
-  <div carousel>
-  <ul ng-repeat="stalker in stalkers">
-      <li>
-      <a class="carousel-item card" href="#"><img src="/img/sample.png">{{stalker.name}}</a>
-      </li>
-  </ul>
-  </div>
-</div>
+        <div ng-if="stalkers">
 
+            <div carousel>
+                
+                    <div ng-repeat="stalker in stalkers">
+                            <a class="carousel-item card-image" href="{{stalker.portfolioUrl}}">
+                            <img src="{{stalker.avatar}}">
+                                <p>{{stalker.name}}</p>
+                                <p>{{stalker.description}}</p>
+                            </a>
+                    </div>
+            </div>
 
-
-
-
-</div>
-
-
+        </div>
+    </div>
 </div>
