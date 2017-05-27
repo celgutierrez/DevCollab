@@ -1,20 +1,22 @@
-<h1 class='text-center'>{{stalker.name}}'s profile page and I am a {{stalker.description}}</h1>
 <div class="container">
-    <div class="row-fluid">
-        <div class="col-md-12">
-            <div class="well">
-                <a href="{{stalker.portfolioUrl}}">portfolio</a>
-                <img ng-src='{{stalker.avatar}}'>
-
-                <form action="/uploadprofile" method="POST" enctype="multipart/form-data">
-                    <label for="avatar" class="btn btn-default btn-file">
-                    choose a profile pic <input type="file" name="myFile" class="hidden">
-                    </label>
-                    <input type="hidden" name="id" value="{{stalker.id}}">
-                    <input type="submit" class="btn btn-primary">
-                </form>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-image">
+                    <img ng-src='{{stalker.avatar}}'>
+                     <h1 class='center'>{{stalker.name}}'s Page</h1>
+                     <h3 class='center'>{{stalker.description}}</h3>
+                    <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
+                        <label for="avatar" class="btn btn-default btn-file">
+                            choose a profile pic
+                            <input type="file" name="myFile" class="hidden">
+                        </label>
+                        <input type="hidden" name="id" value="{{stalker.id}}">
+                        <input type="submit" class="btn btn-primary">
+                    </form>
+                    <a href="{{stalker.portfolioUrl}}">portfolio</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<a href="/portfolio" class="btn btn-primary">&larr; Back</a>
