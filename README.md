@@ -16,4 +16,4 @@ https://partnersincode.herokuapp.com
 
 
 ## WIREFRAME
-![wireframe](https://cloud.githubusercontent.com/assets/26496932/26531703/9a668702-43a3-11e7-8b25-3403d429bb11.jpg)
+![wireframe](https://cloud.githubusercontent.com/assets/26496932/26531786/98a8ede0-43a5-11e7-98c3-2d0265d6d2b6.jpg)
