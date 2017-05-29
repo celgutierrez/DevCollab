@@ -4,17 +4,16 @@
         <h1>Portfolios</h1>
         <div ng-if="!stalkers">
             Loading...
-        </div>
-        <div ng-if="stalkers">
-        </div>
-        <div class="row blue">
+        <div ng-if="stalkers"></div>
+
+        <div class="row">
             <div class="col s12 m4 offset-m4">
-                <div class="card small">
-                    <div class="slider" slider indicators=false>
+                    <div class="slider" slider>
                         <ul class="slides">
-                            <li ng-repeat="stalker in stalkers">
+                               <li ng-repeat="stalker in stalkers">
                                 <div class="card-image">
-                                    <img src="{{stalker.avatar}}">
+                                    <img ng-src="{{stalker.avatar}}">
+
                                     <span class="card-title">{{stalker.title}}</span>
                                 </div>
                                 <div class="card-content">
