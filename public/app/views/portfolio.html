@@ -2,24 +2,32 @@
     <div class="row">
         <a href="/portfolio/edit" class="btn btn-success">edit your profile</a>
         <h1>Portfolios</h1>
-
         <div ng-if="!stalkers">
             Loading...
         </div>
-
         <div ng-if="stalkers">
-
-            <div carousel>
-                
-                    <div ng-repeat="stalker in stalkers">
-                            <a class="carousel-item card-image" href="{{stalker.portfolioUrl}}">
-                            <img src="{{stalker.avatar}}">
-                                <p>{{stalker.name}}</p>
-                                <p>{{stalker.description}}</p>
-                            </a>
+        </div>
+        <div class="row blue">
+            <div class="col s12 m4 offset-m4">
+                <div class="card small">
+                    <div class="slider" slider indicators=false>
+                        <ul class="slides">
+                            <li ng-repeat="stalker in stalkers">
+                                <div class="card-image">
+                                    <img src="{{stalker.avatar}}">
+                                    <span class="card-title">{{stalker.title}}</span>
+                                </div>
+                                <div class="card-content">
+                                    <p>{{stalker.description}}</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="{{stalker.portfolioUrl}}">Link to your Portfolio</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
             </div>
-
         </div>
     </div>
 </div>
