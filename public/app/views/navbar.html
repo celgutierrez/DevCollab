@@ -1,13 +1,13 @@
-<nav ng-show="isLoggedIn()" ng-controller="NavCtrl" role="navigation" class="indigo darken-3">
-    <div class="navbar-wrapper">
-        <ul id="nav-mobile" class="right">
-        <li><a href="/"></a></li>
-            <li><a href="/portfolio">Portfolios</a></li>
-            <li><a href="/stalkers/{{profile()}}">Profile</a></li>
 
-            <li><a href="/portfolio/edit">Settings</a></li>
-            <li><a href="/About">About Us</a></li>
-            <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
-        </ul>
-    </div>
-</nav>
+<ul ng-controller="NavCtrl" role="navigation" class="side-nav fixed" id="nav-mobile" ng-show="isLoggedIn()" style="transform: translateX(0px);">
+    <li><img class="responsive-img" src="img/partners.png"></li>
+    <li><a href="/About">About Us</a></li>
+    <li><a href="/portfolio">Portfolios</a></li>
+    <li><a href="/stalkers/{{profile()}}">Profile</a></li>
+    <li><a href="/portfolio/edit">Settings</a></li>
+    <li><a ng-click="logout()" ng-show="isLoggedIn()">Logout</a></li>
+</ul>
+<a href="#" class="button-collapse md-primary" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="200" data-closeonclick="false">
+    <i class="small material-icons">menu</i>
+</a>
+

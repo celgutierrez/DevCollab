@@ -1,7 +1,7 @@
 <h2 class='text-center'>Edit your profile</h2>
-<p class='text-center'>fill out the information below..</p>
-
+<p class='text-center'>Fill out the information below..</p>
 <form ng-submit="editStalker()">
+
   <div class="form-group">
     <label for="name">Name</label>
     <input type="text" class="form-control" id="name" ng-model="stalker.name">
@@ -22,5 +22,5 @@
     <label for="portfolioUrl">upload a link to your portfolio</label>
     <input type="url" class="form-control" id="portfolioUrl" placeholder="" ng-model="stalker.portfolioUrl">
   </div>
-  <a href="/profile"><button type=submit class="btn btn-primary">submit</button></a>
+ <button type=submit class="btn btn-primary">submit</button>
 </form>
