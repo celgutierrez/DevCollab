@@ -1,40 +1,19 @@
 <div class="container center">
-<h1 class='center'>{{stalker.name}}'s PROFILE PAGE</h1>
-<p>Review your Information.  When done, Click "POST" and it will send to the Main Page</p>
-<p>Need to Update or Edit?  Click "UPDATE/EDIT".  Review Information and Click "POST" and it will send to the Main Page</p>
-<p>Add a Screenshot of your Portfolio to your Profile</p>
 
-<!-- Upload Portfolio Image -->
-<form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
-    <label for="avatar" class="btn btn-default btn-file">
-        Add Portfolio Image
-        <input type="file" name="myFile" class="hidden">
-    </label>
-    <input type="hidden" name="id" value="{{stalker.id}}">
-    <input type="submit" class="btn btn-primary">
-</form>
-
-<!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
-<div class="col">
-    <a class='btn red' data-target='demoModal' modal>Edit Your Profile</a>
-      <a href="/portfolio.html" class='btn green'>POST</a> <!--Re-Route Button to post completed profile card to Portfolio Page -->
-</div>
-
-
-<!-- Edit/Update Profile   **Used SignUp Form Structure** -->
-<div id="demoModal" class="modal">
-    <form ng-submit="userSignup()">
+    <h1 class='center'>{{stalker.name}}'s PROFILE PAGE</h1>
+    <p>Review your Information. When done, Click "POST" and it will send to the Main Page</p>
+    <p>Need to Update or Edit? Click "UPDATE/EDIT". Review Information and Click "POST" and it will send to the Main Page</p>
+    <p>Add a Screenshot of your Portfolio to your Profile</p>
+    <!-- Upload Portfolio Image -->
+    <!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
+    <div class="col">
+        <a class='btn green' data-target='demoModal' modal>Edit Your Profile</a>
+        <!--Re-Route Button to post completed profile card to Portfolio Page -->
+    </div>
+    <!-- Edit/Update Profile   **Used SignUp Form Structure** -->
+    <div id="demoModal" class="modal">
+        <form ng-submit="editStalker()">
             <div class="container z-depth-3">
-                <div class="row">
-                    <div class="input-field col l8 m10 s10 offset-s1 offset-m1 offset-l2">
-                        <input type="email" class="form-control" id="email" placeholder="Email" ng-model="user.email">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col l8 m10 s10 offset-s1 offset-m1 offset-l2">
-                        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="user.password">
-                    </div>
-                </div>
                 <div class="row">
                     <div class="input-field col l8 m10 s10 offset-s1 offset-m1 offset-l2">
                         <input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="user.name">
@@ -65,45 +44,41 @@
                 </div>
             </div>
         </form>
-    <div class="modal-footer">
-        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">UPDATE</a>
     </div>
-</div>
-
-
-
-<!-- Profile Panel Card Structure -->
-  <div class="row center">
-    <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-            <img class="activator" ng-src='{{stalker.avatar}}'>
-            <span class="card-title">{{stalker.name}}</span>
-             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+    <div class="row center">
+                    <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
+                        <label for="avatar" class="btn btn-default btn-file">
+                            Add Portfolio Image
+                            <input type="file" name="myFile" class="hidden">
+                        </label>
+                        <input type="hidden" name="id" value="{{stalker.id}}">
+                        <input type="submit" value="Add Pic" class="btn btn-primary">
+                    </form>
+        <div class="col s12 m6 offset-m3">
+            <div class="card">
+                <div class="card-image">
+                    <img class="activator" ng-src='{{stalker.avatar}}'>
+                    <span class="card-title red">{{stalker.name}}</span>
+                </div>
+                <div class="card-content">
+                    <span class="card-title">{{stalker.title}}</span>
+                    <p class='center'>{{stalker.description}}</p>
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Contact Me<i class="material-icons right">more_vert</i></span>
+                    <a href="{{stalker.portfolioUrl}}">Link to My Portfolio</a>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Let's Partner Up!<i class="material-icons right">close</i></span>
+                    <p>Contact Me</p>
+                </div>
+            </div>
+    <a href="/portfolio" class='align-center btn green'>POST</a>
         </div>
-        <div class="card-content">
-            <span class="card-title">{{stalker.title}}</span>
-            <p class='center'>{{stalker.description}}</p>
-        </div>
-        <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Contact Me<i class="material-icons right">more_vert</i></span>
-            <a href="{{stalker.portfolioUrl}}">Link to My Portfolio</a>
-        </div>
-        <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Let's Partner Up!<i class="material-icons right">close</i></span>
-            <p>Contact Me</p>
-        </div>
-      </div>
+    
     </div>
-  </div>
 
-
-
-
-
-
-
-  <!--   <div class="row">
+<!--   <div class="row">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-image">
