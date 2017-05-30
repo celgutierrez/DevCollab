@@ -1,5 +1,5 @@
 <div class="container center grey lighten-3">
-    <h1 class='center'>{{stalker.name}}'s Profile Page</h1>
+    <h1 class='center'>{{stalker.name}}'s Profile</h1>
     <p>Review your Information. When done, Click "POST" and it will send to the Main Page</p>
     <p>Need to Update or Edit? Click "UPDATE/EDIT". Review Information and Click "POST" and it will send to the Main Page</p>
     <p>Add a Screenshot of your Portfolio to your Profile</p>
@@ -7,6 +7,7 @@
     <!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
     <div class="col">
         <a class='btn waves-effect indigo darken-2' data-target='demoModal' modal>Edit Your Profile</a>
+
         <!--Re-Route Button to post completed profile card to Portfolio Page -->
     </div>
     <!-- Edit/Update Profile   **Used SignUp Form Structure** -->
@@ -44,14 +45,18 @@
             </div>
         </form>
     </div>
-    <div class="row center">
+
+    <div class="row card center">
         <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
-            <label for="avatar" class="btn btn-file">
+            <label for="avatar" class="btn btn-default btn-file">
+
                 Add Portfolio Image
                 <input type="file" name="myFile" class="hidden">
             </label>
             <input type="hidden" name="id" value="{{stalker.id}}">
+
             <input type="submit" value="Add Pic" class="btn waves-effect indigo darken-2">
+
         </form>
         <div class="col s12 m6 offset-m3">
             <div class="card">
@@ -72,6 +77,11 @@
                     <p>Contact Me</p>
                 </div>
             </div>
+
             <a href="/portfolio" class='align-center btn waves-effect indigo darken-2'>POST</a>
+
         </div>
     </div>
+
+
+ 
