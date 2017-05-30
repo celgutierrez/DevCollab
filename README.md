@@ -9,8 +9,8 @@ Team Members: Emmeline Aquino, Tim Tmuangkeo, Celina Gutierrez
 ## TECHNOLOGIES USED:
 * MEAN Stack - Mongo, Express, Angular, Nodejs
 * Materialize-Angular.css
-* Trello Boards - Helped with Tasks
-* Angular-Material
+* Trello Boards - Really Helpful as a Kanban/Tasks Board
+* Angular-Material node package
 
 ### DEPLOYED ON HEROKU
 https://partnersincode.herokuapp.com
@@ -22,7 +22,7 @@ https://partnersincode.herokuapp.com
 
 ----------------------------------------------------------------------------------------------------------------------
 ### WINS!!
-The Project was done out of love.  We all were very interested on getting our Portfolios showcased to everyone and also get "partnered" with other experienced Web Developers to join projects to keep our newly acquired skills fresh.  Big Wins: We were able to get MVP on "our" Targeted time.  We worked as an awesome team!  Big kudos!!!!
+The Project was done out of sweat, tears, keyboard bashing and love.  We all were very interested on getting our Portfolios showcased for anyone who like to view it.  Also to be "partnered" with other experienced Web Developers and join any part of their projects in order to keep our newly acquired skills fresh.  Big Wins: We were able to get MVP on "our" Targeted time.  We worked as an awesome team!  Big kudos!!!!
 ![img_2880](https://cloud.githubusercontent.com/assets/26496932/26576693/a31884ea-44de-11e7-8166-80eb2a4e5275.JPG)
 
 ### CHALLENGES of the Project
