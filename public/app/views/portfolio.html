@@ -1,46 +1,33 @@
-<div class="container center">
+<div class="container center grey lighten-4">
     <div class="row">
-
         <h1>Portfolios</h1>
-
     </div>
 </div>
-<div class="container">
+<div class="container grey lighten-4">
     <div ng-if="!stalkers">
         loading...
     </div>
     <div ng-if="stalkers"></div>
     <div carousel>
-
         <div class="row center">
             <div class="col s12 m6 offset-m3">
-
-
-
-                <div class="md-card carousel-item blue" ng-repeat="stalker in stalkers">
-                        <div class="card-image">
+                <div class="md-card carousel-item black" ng-repeat="stalker in stalkers">
+                    <div class="card-image">
                         <a href="{{stalker.portfolioUrl}}">
-                            <img src="{{stalker.avatar}}" style="width:200px;height:180px";>
-                         </a>
-                        </div>
-                    <div class="md-card-content">
-
-                        <span class="card-title blue">{{stalker.title}}</span>
-                        <p class='center blue'>{{stalker.description}}</p>
-
-
-                        <a ng-click="deleteStalker(stalker._id, $index)">delete</a>
+                            <img src="{{stalker.avatar}}" style="width:200px;height:180px" ;>
+                        </a>
                     </div>
-
-                    <div class="card-content blue">
+                    <div class="md-card-content black">
+                        <span class="card-title white-text">{{stalker.title}}</span>
+                        <p class='center white-text'>{{stalker.description}}</p>
+                        <a ng-click="deleteStalker(stalker._id, $index)">Delete</a>
+                    </div>
+                    <div class="card-content grey darken-3">
                         <a class="white-text" href="#">Link to My Portfolio</a>
                         <span class="card-title activator grey-text text-darken-4"></span>
                     </div>
                 </div>
-
-
-            </div>
             </div>
         </div>
     </div>
-
+</div>
