@@ -1,21 +1,19 @@
 angular.module('StalkerCtrls', ['StalkerServices'])
     .controller('PortfolioCtrl', ['$scope', 'Stalker', function($scope, Stalker) {
-        $scope.users = [];
+$scope.stalkers = [];
 
   Stalker.query(function success(data) {
-    console.log('this is my data:', data)
     $scope.stalkers = data;
   }, function error(data) {
     console.log(data);
   });
 
-
-  $scope.deleteStalker = function(id, usersIdx) {
+  $scope.deleteStalker = function(id, stalkersIdx) {
     Stalker.delete({ id: id }, function success(data) {
-        console.log('this is a good route', data)
-      $scope.user.splice(usersIdx, 1);
+      console.log('oh we good i gotchu', data)
+      $scope.stalkers.splice(stalkersIdx, 1);
     }, function error(data) {
-      console.log('wtf..', data);
+      console.log('dont you fucking dare./..', data);
     });
   };
 }])
@@ -116,7 +114,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     .controller('NavCtrl', ['$scope', 'Auth', '$location', 'Stalker', function($scope, Auth, $location, Stalker) {
         $scope.profile = function() {
             return Auth.currentUser().id;
-            
+
         }
 
         $scope.isLoggedIn = function() {
