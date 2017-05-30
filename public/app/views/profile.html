@@ -8,6 +8,17 @@
 </div>
 
     <!-- Upload Portfolio Image -->
+        <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
+            <label for="avatar" class=" btn-default btn-file">
+
+                Add Portfolio Image
+                <input type="file" name="myFile" class="hidden">
+            </label>
+            <input type="hidden" name="id" value="{{stalker.id}}">
+
+            <input type="submit" value="Add Pic" class="btn waves-effect indigo darken-2">
+
+        </form>
     <!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
     <div class="col">
         <a class='btn waves-effect indigo darken-2' data-target='demoModal' modal>Edit Your Profile</a>
@@ -54,17 +65,6 @@
 
     <div class="row card center">
 
-        <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
-            <label for="avatar" class="btn btn-default btn-file">
-
-                Add Portfolio Image
-                <input type="file" name="myFile" class="hidden">
-            </label>
-            <input type="hidden" name="id" value="{{stalker.id}}">
-
-            <input type="submit" value="Add Pic" class="btn waves-effect indigo darken-2">
-
-        </form>
         <div class="col s12 m6 offset-m3">
             <div class="card">
                 <div class="card-image">
@@ -108,9 +108,9 @@
 
             <a href="/portfolio" class='align-center btn waves-effect indigo darken-2'>POST</a>
     </div>
-  </div>                  
+  </div>
  </div>
-               
 
 
- 
+
+

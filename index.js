@@ -62,7 +62,7 @@ app.post('/uploadprofile', upload.single('myFile'), function(req, res) {
     // console.log('uploading image', req.body);
     cloudinary.uploader.upload(req.file.path, function(result) {
         console.log('New url from cloudinary', result.url);
-        User.findByIdAndUpdate({ id: req.body.id }, { avatar: result.url }, function(user) {
+        User.findByIdAndUpdate({ _id: req.body.id }, { avatar: result.url }, function(user) {
             res.redirect('/stalkers/' + req.body.id);
         });
     });

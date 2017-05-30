@@ -90,10 +90,6 @@ angular.module('StalkerCtrls', ['StalkerServices'])
 }])
 
 
-
-
-
-
 .controller('EditCtrl', ['$scope', '$location', 'Stalker', function($scope, $location, Stalker) {
         $scope.stalker = {
             name: '',
