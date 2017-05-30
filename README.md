@@ -19,6 +19,7 @@ https://partnersincode.herokuapp.com
 ## WIREFRAME
 ![wireframe](https://cloud.githubusercontent.com/assets/26496932/26531786/98a8ede0-43a5-11e7-98c3-2d0265d6d2b6.jpg)
 ![wireframe2](https://cloud.githubusercontent.com/assets/26496932/26576251/ff948bbc-44dc-11e7-8c07-33192c2567fa.jpg)
+![img_2880](https://cloud.githubusercontent.com/assets/26496932/26576693/a31884ea-44de-11e7-8166-80eb2a4e5275.JPG)
 ----------------------------------------------------------------------------------------------------------------------
 ### WINS!!
 The Project was done out of love.  We all were very interested on getting our Portfolios showcased to everyone and also get "partnered" with other experienced Web Developers to join projects to keep our newly acquired skills fresh.  Big Wins: We were able to get MVP on "our" Targeted time.  We worked as an awesome team!  Big kudos!!!!
