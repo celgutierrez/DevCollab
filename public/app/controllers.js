@@ -88,8 +88,6 @@ angular.module('StalkerCtrls', ['StalkerServices'])
   };
 }])
 
-}])
-
 
 
 
