@@ -25,7 +25,7 @@ angular.module('StalkerServices', ['ngResource'])
         try {
           //Try executing some vulnerable code that could potentially throw an exception
           var payload = JSON.parse($window.atob(token.split('.')[1]));
-          console.log('payload fetched and decoded:', payload);
+          
           return payload;
         }
         catch (err){

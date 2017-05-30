@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router', 'StalkerCtrls', 'ui.materialize']);
+var app = angular.module('MyApp', ['ui.router', 'StalkerCtrls', 'ui.materialize', 'ngMaterial']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
