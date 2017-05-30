@@ -50,6 +50,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     }, function error(data) {
         console.log(data);
     });
+}
 }])
 
 
@@ -85,6 +86,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     Auth.removeToken();
     $location.path('/About')
   };
+}])
 
 
 
