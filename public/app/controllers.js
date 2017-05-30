@@ -32,9 +32,6 @@ angular.module('StalkerCtrls', ['StalkerServices'])
 }])
 
 
-
-
-
 .controller('EditCtrl', ['$scope', '$location', 'Stalker' ,function($scope, $location, Stalker) {
   $scope.stalker = {
     name: '',
@@ -53,6 +50,8 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     });
   };
 }])
+
+
 .controller('NavCtrl', ['$scope', 'Auth','$location', 'Stalker', function($scope, Auth, $location, Stalker) {
   $scope.profile = function() {
     return Auth.currentUser().id;
@@ -67,6 +66,25 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     Auth.removeToken();
     $location.path('/')
   };
+}])
+
+
+.controller('AboutCtrl', ['$scope', 'Auth','$location', 'Stalker', function($scope, Auth, $location, Stalker) {
+  $scope.profile = function() {
+    return Auth.currentUser().id;
+    console.log('this is what you need' ,Auth.currentUser())
+}
+
+  $scope.isLoggedIn  = function() {
+    return Auth.isLoggedIn();
+  }
+
+  $scope.logout = function() {
+    Auth.removeToken();
+    $location.path('/About')
+  };
+
+
 
 }])
 .controller('SignupCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
