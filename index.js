@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 app.post('/api/auth', function(req, res) {
     User.findOne({ email: req.body.email }, function(err, user) {
         // return 401 if error or no user
-        if (err || !user) return res.status(401).send({ message: 'User not found' });
+        if (err || !user) return res.status(401).send({ message: 'why cant you find me!?!?' });
 
         // attempt to authenticate a user
         var isAuthenticated = user.authenticated(req.body.password);
@@ -61,8 +61,8 @@ app.post('/api/auth', function(req, res) {
 app.post('/uploadprofile', upload.single('myFile'), function(req, res) {
     // console.log('uploading image', req.body);
     cloudinary.uploader.upload(req.file.path, function(result) {
-        // console.log('New url from cloudinary', result.url);
-        User.findByIdAndUpdate({ _id: req.body.id }, { avatar: result.url }, function(user) {
+        console.log('New url from cloudinary', result.url);
+        User.findByIdAndUpdate({ id: req.body.id }, { avatar: result.url }, function(user) {
             res.redirect('/stalkers/' + req.body.id);
         });
     });

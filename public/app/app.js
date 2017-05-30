@@ -1,4 +1,4 @@
-var app = angular.module('MyApp', ['ui.router', 'StalkerCtrls', 'ui.materialize']);
+var app = angular.module('MyApp', ['ui.router', 'StalkerCtrls', 'ui.materialize', 'ngMaterial']);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
         function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -33,6 +33,11 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
                     url: '/login',
                     templateUrl: 'app/views/userLogin.html',
                     controller: 'LoginCtrl'
+                })
+                  .state('about', {
+                    url: '/About',
+                    templateUrl: 'app/views/About.html',
+                    controller: 'AboutCtrl'
                 })
                 .state('404', {
                     url: '/404',
