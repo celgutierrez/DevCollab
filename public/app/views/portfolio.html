@@ -5,11 +5,11 @@
         <div ng-if="!stalkers">
             Loading...
         <div ng-if="stalkers"></div>
-
+<div carousel>
         <div class="row">
             <div class="col s12 m4 offset-m4">
-                    <div class="slider" slider>
-                        <ul class="slides">
+                    <div class="carousel-item">
+                        <ul>
                                <li ng-repeat="stalker in stalkers">
                                 <div class="card-image">
                                     <img ng-src="{{stalker.avatar}}">
@@ -26,6 +26,7 @@
                         </ul>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
