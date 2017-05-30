@@ -50,6 +50,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     }, function error(data) {
         console.log(data);
     });
+}
 }])
 
 
@@ -86,6 +87,8 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     $location.path('/About')
   };
 
+}])
+
 
 
 
@@ -113,7 +116,7 @@ angular.module('StalkerCtrls', ['StalkerServices'])
     .controller('NavCtrl', ['$scope', 'Auth', '$location', 'Stalker', function($scope, Auth, $location, Stalker) {
         $scope.profile = function() {
             return Auth.currentUser().id;
-            
+
         }
 
         $scope.isLoggedIn = function() {
