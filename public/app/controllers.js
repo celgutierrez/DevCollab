@@ -21,16 +21,71 @@ angular.module('StalkerCtrls', ['StalkerServices'])
 
 
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', 'Auth', function($scope, $stateParams, Stalker, Auth) {
-    $scope.stalker = {};
-    console.log('id is', $stateParams.id);
 
-    Stalker.get({ id: $stateParams.id }, function success(data) {
-        
-        $scope.stalker = data;
+  $scope.stalker = {};
+  // console.log('id is', $stateParams.id);
+
+  Stalker.get({ id: $stateParams.id }, function success(data) {
+    console.log('data is', data);
+    $scope.stalker = data;
+  }, function error(data) {
+    console.log(data);
+  });
+}])
+
+
+.controller('EditCtrl', ['$scope', '$location', 'Stalker' ,function($scope, $location, Stalker) {
+  $scope.stalker = {
+    name: '',
+    title: '',
+    description: '',
+    image: '',
+    portfolioUrl: '',
+    avatar: ''
+  };
+
+  $scope.editStalker = function() {
+    Stalker.save($scope.stalker, function success(data) {
+      $location.path('/portfolio');
     }, function error(data) {
         console.log(data);
     });
 }])
+
+
+
+.controller('NavCtrl', ['$scope', 'Auth','$location', 'Stalker', function($scope, Auth, $location, Stalker) {
+  $scope.profile = function() {
+    return Auth.currentUser().id;
+    console.log('this is what you need' ,Auth.currentUser())
+}
+
+  $scope.isLoggedIn  = function() {
+    return Auth.isLoggedIn();
+  }
+
+  $scope.logout = function() {
+    Auth.removeToken();
+    $location.path('/')
+  };
+}])
+
+
+.controller('AboutCtrl', ['$scope', 'Auth','$location', 'Stalker', function($scope, Auth, $location, Stalker) {
+  $scope.profile = function() {
+    return Auth.currentUser().id;
+    console.log('this is what you need' ,Auth.currentUser())
+}
+
+  $scope.isLoggedIn  = function() {
+    return Auth.isLoggedIn();
+  }
+
+  $scope.logout = function() {
+    Auth.removeToken();
+    $location.path('/About')
+  };
+
 
 
 
