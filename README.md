@@ -1,4 +1,4 @@
-## PROJECT #3 - PARTNER IN CODE 
+## PROJECT #3 - partnersInCode 
 Team Members: Emmeline Aquino, Tim Tmuangkeo, Celina Gutierrez
 
 ## USER STORIES ##
@@ -26,7 +26,8 @@ The Project was done out of love.  We all were very interested on getting our Po
 ![img_2880](https://cloud.githubusercontent.com/assets/26496932/26576693/a31884ea-44de-11e7-8166-80eb2a4e5275.JPG)
 
 ### CHALLENGES of the Project
-Some challenges were around the scope of the project.  The routing was easy because we used a MEAN boilerplate, but it was difficult to remember where things were routed in the project.  We attempted to use 2 models, but we found challenges storing user data.  Another challenge was accessing our current user from the database and how to use AUTH to give user access to pages as well as protecting current users profiles for public views.  And our biggest challenge: was trying to figure out how we could implement our tinder-like swipe feature using angular and also our cloudinary API was throwing a tantrum and not able to render our images most of the time.  We were still perplexed on how to use the "many" different codes regarding carousels that would work with Angularjs.  Styling and adding routes to our customized card-panels were somewhat difficult and doing what we to wanted so that it would fit the "customized" carousel templates was very time-consumming.
+Some challenges were around the scope of the project.  The routing was easy because we used a MEAN boilerplate, but it was difficult to remember where things were routed in the project.  We attempted to use 2 models, but we found challenges storing user data.  Another challenge was accessing our current user from the database and how to use AUTH to give user access to pages as well as protecting current users profiles for public views.  And our biggest challenge: was trying to figure out how we could implement our tinder-like swipe feature using angular.  We used cloudinary API and it was throwing a tantrum by not able to render our images most of the time (even though our db was saying it was good to go for show).  We were still perplexed on how to use the "many" way to implement carousels that would work with Angularjs.  Styling and adding routes to our customized card-panels were somewhat difficult and doing what we to wanted so that it would fit the "customized" carousel templates was very time-consumming.
+
 <img width="250" alt="portfoliocarousel" src="https://cloud.githubusercontent.com/assets/26496932/26576860/4290d1bc-44df-11e7-8e21-aef39317d102.png">
 
 
