@@ -1,13 +1,15 @@
 <div class="container center">
-
-    <h1 class='center'>{{stalker.name}}'s PROFILE PAGE</h1>
-    <p>Review your Information. When done, Click "POST" and it will send to the Main Page</p>
-    <p>Need to Update or Edit? Click "UPDATE/EDIT". Review Information and Click "POST" and it will send to the Main Page</p>
-    <p>Add a Screenshot of your Portfolio to your Profile</p>
+<div class="row">
+    <h1 class='center'><strong>{{stalker.name}}'s</strong> Profile</h1>
+    <p class='flow-text'>Review your Information. When done, Click "POST" and it will send to the Main Page
+    Need to Update or Edit? Click "UPDATE/EDIT". Review Information and Click "POST" and it will send to the Main Page
+    Add a Screenshot of your Portfolio to your Profile</p>
+    
+</div>
     <!-- Upload Portfolio Image -->
     <!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
     <div class="col">
-        <a class='btn green' data-target='demoModal' modal>Edit Your Profile</a>
+        <a class='btn green white-text' data-target='demoModal' modal>Edit Your Profile</a>
         <!--Re-Route Button to post completed profile card to Portfolio Page -->
     </div>
     <!-- Edit/Update Profile   **Used SignUp Form Structure** -->
@@ -45,15 +47,15 @@
             </div>
         </form>
     </div>
-    <div class="row center">
-                    <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
-                        <label for="avatar" class="btn btn-default btn-file">
-                            Add Portfolio Image
-                            <input type="file" name="myFile" class="hidden">
-                        </label>
-                        <input type="hidden" name="id" value="{{stalker.id}}">
-                        <input type="submit" value="Add Pic" class="btn btn-primary">
-                    </form>
+    <div class="row card center">
+        <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
+            <label for="avatar" class="btn btn-default btn-file">
+                Add Portfolio Image
+                <input type="file" name="myFile" class="hidden">
+            </label>
+            <input type="hidden" name="id" value="{{stalker.id}}">
+            <input type="submit" value="Add Pic" class="btn btn-primary">
+        </form>
         <div class="col s12 m6 offset-m3">
             <div class="card">
                 <div class="card-image">
@@ -73,11 +75,10 @@
                     <p>Contact Me</p>
                 </div>
             </div>
-    <a href="/portfolio" class='align-center btn green'>POST</a>
+            <a href="/portfolio" class='align-center btn green white-text'>POST</a>
         </div>
-    
     </div>
-
+</div>
 <!--   <div class="row">
         <div class="col-md-4">
             <div class="card">

@@ -1,46 +1,38 @@
-<div class="container center">
-    <div class="row">
 
-        <h1>Portfolios</h1>
-
+    <div class="container center">
+        
+            <h1 class="card blue-grey lighten-5 animated lightSpeedIn">Portfolios</h1>
+        
     </div>
-</div>
-<div class="container">
     <div ng-if="!stalkers">
         loading...
     </div>
     <div ng-if="stalkers"></div>
-    <div carousel>
-
-        <div class="row center">
-            <div class="col s12 m6 offset-m3">
-
-
-
-                <div class="md-card carousel-item blue" ng-repeat="stalker in stalkers">
+    <div class="container">
+    <div class="row-fluid">
+        <div carousel>
+            <div class="center">
+                <div class="col s12 m6 offset-m3">
+                    <div class="animated flipInX">
+                        <img src="img/seattle.jpg" width='100%'>
+                    </div>
+                    <div class="md-card carousel-item blue-grey darken-1" width=100% ng-repeat="stalker in stalkers">
                         <div class="card-image">
-                        <a href="{{stalker.portfolioUrl}}">
-                            <img src="{{stalker.avatar}}" style="width:200px;height:180px";>
-                         </a>
+                            <span class="card-title white-text"><strong>{{stalker.name}}</strong></span>
+                            <a href="{{stalker.portfolioUrl}}">
+                                <img src="{{stalker.avatar}}" style="width:200px;height:180px" ;>
+                            </a>
                         </div>
-                    <div class="md-card-content">
-
-                        <span class="card-title blue">{{stalker.title}}</span>
-                        <p class='center blue'>{{stalker.description}}</p>
-
-
-                        <a ng-click="deleteStalker(stalker._id, $index)">delete</a>
-                    </div>
-
-                    <div class="card-content blue">
-                        <a class="white-text" href="#">Link to My Portfolio</a>
-                        <span class="card-title activator grey-text text-darken-4"></span>
-                    </div>
+                        <div class="md-card-content">
+                            <p class='center blue-grey darken-1 white-text'>{{stalker.title}}</p>
+                            
+                        <div class="card-content blue-grey darken-1">
+                            <a class="white-text" href="{{stalker.portfolioUrl}}">Link to My Portfolio</a>
+                        </div>
+                        </div>
                 </div>
-
-
-            </div>
             </div>
         </div>
     </div>
-
+    </div>
+</div>

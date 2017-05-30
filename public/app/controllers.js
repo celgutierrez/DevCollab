@@ -1,23 +1,24 @@
 angular.module('StalkerCtrls', ['StalkerServices'])
     .controller('PortfolioCtrl', ['$scope', 'Stalker', function($scope, Stalker) {
+        $scope.users = [];
 
-        $scope.stalkers = [];
-        Stalker.query(function success(data) {
-          console.log('i am repeating all these objects', data)
-          $scope.stalkers = data;
-        }, function error(data) {
-          console.log(data);
-        });
+  Stalker.query(function success(data) {
+    console.log('this is my data:', data)
+    $scope.stalkers = data;
+  }, function error(data) {
+    console.log(data);
+  });
 
 
-  $scope.deleteStalker = function(id, stalkersIdx) {
+  $scope.deleteStalker = function(id, usersIdx) {
     Stalker.delete({ id: id }, function success(data) {
-      $scope.stalkers.splice(stalkersIdx, 1);
+        console.log('this is a good route', data)
+      $scope.user.splice(usersIdx, 1);
     }, function error(data) {
-      console.log(data);
+      console.log('wtf..', data);
     });
   };
-    }])
+}])
 
 
 .controller('ShowCtrl', ['$scope', '$stateParams', 'Stalker', 'Auth', function($scope, $stateParams, Stalker, Auth) {
