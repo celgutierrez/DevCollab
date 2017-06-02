@@ -1,36 +1,35 @@
 <div class="blue-grey">
     <div class="container center">
-      <h1 class="card blue-grey lighten-5 animated lightSpeedIn">Portfolios</h1>
+        <h1 class="card blue-grey lighten-5">Portfolios</h1>
     </div>
     <div ng-if="!stalkers">
         loading...
     </div>
     <div ng-if="stalkers">
-      <div class="container">
-        <div class="row-fluid">
-            <div carousel>
-                <div class="center">
-                    <div class="col s12 m6 offset-m3">
-                        <img src="img/seattle.jpg" width='100%'>
-                        <div class="md-card carousel-item blue-grey darken-1" width=100% ng-repeat="stalker in stalkers">
-                            <div class="card-image">
-                                <span class="card-title white-text"><strong>{{stalker.name}}</strong></span>
-                                <a href="{{stalker.portfolioUrl}}">
-                                    <img src="{{stalker.avatar}}" style="width:200px;height:180px">
-                                </a>
-                            </div>
-                            <div class="md-card-content">
-                                <p class='center blue-grey darken-1 white-text'>{{stalker.title}}</p>
-
-                            <div class="card-content blue-grey darken-1">
-                                <a class="white-text" href="{{stalker.portfolioUrl}}">Link to My Portfolio</a>
-                            </div>
+        <div class="container">
+            <div class="row-fluid">
+                <div carousel>
+                    <div class="center">
+                        <div class="col s12 m6 offset-m3">
+                            <img src="img/seattle.jpg" width='100%'>
+                            <div class="md-card carousel-item blue-grey darken-1" width=100% ng-repeat="stalker in stalkers">
+                                <div class="card-image">
+                                    <span class="card-title white-text"><strong>{{stalker.name}}</strong></span>
+                                    <a href="{{stalker.portfolioUrl}}">
+                                        <img src="{{stalker.avatar}}" style="width:200px;height:180px">
+                                    </a>
+                                </div>
+                                <div class="md-card-content">
+                                    <p class='center blue-grey darken-1 white-text'>{{stalker.title}}</p>
+                                    <div class="card-content blue-grey darken-1">
+                                        <a class="white-text" href="{{stalker.portfolioUrl}}">Link to My Portfolio</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
 </div>
