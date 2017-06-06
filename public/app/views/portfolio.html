@@ -10,13 +10,12 @@
             <div carousel>
                 <div class="center">
                     <div class="col s12 m6 offset-m3">
-                        <img src="img/seattle.jpg" width='100%'>
                         <div class="md-card carousel-item blue-grey darken-1" width=100% ng-repeat="stalker in stalkers">
-                            <div class="card-image">
-                                <span class="card-title white-text"><strong>{{stalker.name}}</strong></span>
-                                <a href="{{stalker.portfolioUrl}}">
+                            <a href="{{stalker.portfolioUrl}}">
+                                <div class="card-image">
+                                    <span class="card-title white-text"><strong>{{stalker.name}}</strong></span>
                                     <img src="{{stalker.avatar}}" style="width:200px;height:180px">
-                                </a>
+                            </a>
                             </div>
                             <div class="md-card-content">
                                 <p class='center blue-grey darken-1 white-text'>{{stalker.title}}</p>
@@ -25,6 +24,7 @@
                                 </div>
                             </div>
                         </div>
+                        <img src="img/seattle.jpg" width='100%'>
                     </div>
                 </div>
             </div>
