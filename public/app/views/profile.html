@@ -1,7 +1,7 @@
 <div class="container center">
     <div class="row">
         <h1 class='center'><strong>{{stalker.name}}'s</strong> Profile</h1>
-        <p class='flow-text'>Review your Information. When done, Click "POST" and it will send to the Main Page Need to Update or Edit? Click "UPDATE/EDIT". Review Information and Click "POST" and it will send to the Main Page Add a Screenshot of your Portfolio to your Profile</p>
+        <p class='flow-text'>Review your current information and hit Edit if you want to change what others see. Remember to upload a screenshot of your portfolio to give a snapshot of what you can do!</p>
     </div>
     <!-- Upload Portfolio Image -->
     <form class="center" action="/uploadprofile" method="POST" enctype="multipart/form-data">
@@ -14,7 +14,7 @@
     </form>
     <!-- Model Triggers - BUTTONS for "Edit" Profile and "Add" to Portfolio's Main Page -->
     <div class="col">
-        <a class='btn waves-effect indigo darken-2' data-target='demoModal' modal>Edit Your Profile</a>
+        <a class='btn waves-effect indigo darken-2' data-target='demoModal' modal>edit info</a>
         <!--Re-Route Button to post completed profile card to Portfolio Page -->
     </div>
     <!-- Edit/Update Profile   **Used SignUp Form Structure** -->
